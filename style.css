@@ -1,0 +1,567 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg:#c4c4c4;
+  --shadow:inset 2px 2px 1px rgb(255, 255, 255), 2px 2px 1px black;
+  --shadow-2:inset -2px -2px 1px rgb(255, 255, 255), -2px -2px 1px black;
+}
+body, html{
+  height: 100%;
+  width: 100%;
+}
+main{
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  background-color: #008081;
+}
+header{
+  position: relative;
+  width: 100%;
+  height: 95.5%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  overflow: hidden;
+}
+footer{
+  width: 100%;
+  height:4.4vh;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+footer #down-footer{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: 1px solid white;
+  height: 4.4vh;
+  background-color: #afafaf;
+}
+.start-btn{
+  width: 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5vw;
+  background-color: var(--bg);
+  padding: 0 0.3vw;
+  margin-left: 0.4vw;
+  box-shadow: inset 2.6px 2.6px 1px rgb(255, 255, 255), 2.6px 2.6px 1px black;
+  transition: 0.2s;
+}
+.start-btn:hover{
+  box-shadow: inset -2.6px -2.6px 1px rgb(255, 255, 255), -2.6px -2.6px 1px black;
+  cursor: pointer;
+}
+
+.start-btn .start-img{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+footer #down-footer .start-btn .start-img h2{
+  font-size: 19px;
+}
+footer #down-footer .start-btn .start-img img{
+  width: 33%;
+  rotate: -20deg;
+}
+#welcome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13vw;
+  height: 1.5vw;
+  background-color: #dddddc;
+  box-shadow: inset 2px 2px 2px black;
+  margin-left: 0.5vw;
+  margin-top: 1px;
+  border: 1px solid white;
+}
+#welcome h3{
+  color: rgb(68, 68, 68);
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 400;
+}
+#time{
+  width: 80%;
+  display: flex;
+  justify-content: end;
+  padding-right: 10px;
+}
+.watch-container {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  padding-top: 3px;
+  background-color: #c4c4c4;
+  border: 1px solid white;
+  width: 5.5vw;
+  box-shadow: inset 2px 2px 2px black;
+  height: 1.5vw;
+  color: #0e0e0e;
+}
+
+/* Blinking colon effect */
+.colon {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+/* Keyframes for blinking */
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+
+#desktop {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Individual icon styling */
+.icon {
+  width: 80px;
+  margin: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  user-select: none;
+}
+#desktop .icon h3{
+  color: white;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.icon img {
+  z-index: 1; /* Set image behind the div */
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* analog watch   */
+#analog-clock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.4vw;
+  padding: 20px;
+  position: absolute;
+  left: 82%;
+}
+.clock {
+  width: 200px;
+  height: 200px;
+  border: 8px solid #333;
+  border-radius: 50%;
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Styling for hour, minute, and second hands */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: rotate(90deg);
+}
+
+/* Hour hand styling */
+.hour-hand {
+  width: 6px;
+  rotate: 272deg;
+  height: 50px;
+  background-color: #333;
+}
+
+/* Minute hand styling */
+.minute-hand {
+  width: 4px;
+  rotate: 267deg;
+  height: 70px;
+  background-color: #666;
+}
+
+/* Second hand styling */
+.second-hand {
+  width: 2px;
+  height: 80px;
+  background-color: red;
+}
+
+/* Center circle on the clock */
+.center-point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  z-index: 4;
+}
+#start-btn-menu{
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  width: 100%;
+  height: 94vh;
+  margin-left: -4.2vw;
+}
+#start-menu{
+  z-index: 2;
+  width: 20vw;
+  height: 50vh;
+  float: left;
+  background-color: #c4c4c4;
+  display: none;
+  text-align: center;
+  box-shadow: var(--shadow);
+  line-height: 100px;
+  margin-top: 10px;
+}
+#btn-full {
+  color: rgb(24, 24, 24);
+  font-size: 12px;
+  box-shadow: inset 2.6px 2.6px 1px rgb(255, 255, 255), 2px 2px 1px black;
+  height: 1.6vw;
+  padding: 1px 4px;
+  margin-right: 7px;
+  cursor: pointer;
+  background-color: #c4c4c4;
+  font-weight: 600;
+}
+#start-menu-box , #menu-items{
+  float: left;
+}
+#menu-items .items{
+  width: 17vw;
+  height: 9.56vh;
+  margin-top: 2px;
+  display: flex;
+  gap: 1.3vw;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+#menu-items .items:hover{
+  background-color: #333;
+  cursor: pointer;
+  width: 17.7vw;
+}
+#menu-items .items img{
+  width: 13%;
+}
+#menu-items .items h1{
+  font-size: 1.4vw;
+  font-weight: 500;
+}
+#start-menu-box{
+  width: 2vw;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  height: 100%;
+  margin: 2px;
+  background-color: rgb(85, 85, 85);
+}
+#start-menu-box h3{
+  rotate: 270deg;
+  width:2vw ;
+  color: var(--bg);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+#home{
+  display: none; 
+  position: absolute;
+  z-index:5;
+  width: 50%;
+  height: 32vw;
+  cursor: grab;
+  box-shadow: var(--shadow);
+  background-color:var(--bg);
+  resize: horizontal;
+  user-select: none;
+  overflow: auto;
+}
+
+#home .top{
+  background-color: #818180;
+  padding: 0 10px;
+  height: 5vh;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home .top .top-left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#home .top .top-left img{
+  width: 1.6vw;
+}
+#home .top .top-left h3{
+  color: white;
+  font-size: 1.2vw;
+  margin-left: 7px;
+}
+#home .top .top-right{
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+  align-items: center;
+}
+#home .top .top-right button{
+  width: 1.5vw;
+  box-shadow: var(--shadow);
+  background-color: var(--bg);
+  height: 1.5vw;
+}
+#down .down-top{
+  display: flex;
+  gap: 10px;
+  padding: 4px 8px;
+  font-size: 1vw;
+}
+
+#down .down-middle{
+  width: 98%;
+  margin-left: 8px;
+  display: flex;
+  padding: 2vw 2vw;
+  gap: 7vw;
+  row-gap: 1vw;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  box-shadow: var(--shadow-2);
+  height: 47vh;
+  background-color: white;
+}
+#down .down-down{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 10px;
+}
+#down .down-down .div{
+  padding: 3px;
+  box-shadow: inset -2px -2px 1px rgb(255, 255, 255), -2px -2px 1px black;;
+}
+
+
+#about{
+  display: none; 
+  left: 45vw;
+  position: absolute;
+  z-index:5;
+  width: 50%;
+  height: 32vw;
+  box-shadow: var(--shadow);
+  background-color:var(--bg);
+  resize: horizontal;
+  overflow: auto;
+  user-select: none;
+  cursor: grab;
+}
+#about .top{
+  background-color: #818180;
+  padding: 0 10px;
+  height: 5vh;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#about .top .top-left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#about .top .top-left img{
+  width: 1.6vw;
+}
+#about .top .top-left h3{
+  color: white;
+  font-size: 1.2vw;
+  margin-left: 7px;
+}
+#about .top .top-right{
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+  align-items: center;
+}
+#about .top .top-right button{
+  width: 1.5vw;
+  box-shadow: var(--shadow);
+  background-color: var(--bg);
+  height: 1.5vw;
+}
+#about #down .down-top{
+  display: flex;
+  gap: 10px;
+  padding: 4px 8px;
+  font-size: 1vw;
+}
+
+#about #down .down-middle{
+  width: 98%;
+  margin-left: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2vw;
+  border-radius: 8px;
+  box-shadow: var(--shadow-2);
+  height: 47vh;
+  background-color: white;
+}
+#about #down .down-middle #image-about img{
+  margin-left: -5vw;
+}
+#about #down .down-middle h3{
+  font-size: 1.3vw;
+  padding: 7px;
+  box-shadow: var(--shadow-2);
+  font-weight: 500;
+  word-spacing: 4px;
+  line-height: 1.4vw;
+}
+#about #down .down-down{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 10px;
+}
+#about #down .down-down .div{
+  padding: 3px;
+  width: 7vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 3vw;
+  box-shadow: inset 2px 2px 1px rgb(255, 255, 255), 2px 2px 1px black;;
+}
+#about #down .down-down .div:hover{
+  box-shadow: var(--shadow-2);
+}
+/* GAME1 START  */
+.game-container {
+  display: flex;
+  box-shadow: var(--shadow);
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 30vw;
+  background-color: #f5f5f5;
+}
+
+/* Tic-tac-toe board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+/* Tic-tac-toe buttons */
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #c4c4c4;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 2px 2px 1px rgb(255, 255, 255), 2px 2px 1px black;
+}
+
+/* Restart button */
+.restart-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+#gameA{
+  display: none;
+}
+#game{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13vw;
+  height: 1.5vw;
+  cursor: pointer;
+  background-color: var(--bg);
+  box-shadow: var(--shadow);
+  margin-left: 0.5vw;
+  margin-top: 1px;
+  border: 1px solid white;
+  transition:0.3s ease-in-out;
+}
+#game:hover{
+  box-shadow: var(--shadow-2);
+}
+#top-game{
+  background-color:#666;
+  box-shadow: var(--shadow);
+  padding: 2px 10px;
+  margin-top: -2.2vw;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 3vw;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#game-btnn{
+  width: 1.2vw;
+  height: 1.2vw;
+  padding: 2px;
+  box-shadow: var(--shadow);
+}
+#game-id-btn{
+   margin-left: 20vw;
+}
+/* GAME1 ENDS  */
